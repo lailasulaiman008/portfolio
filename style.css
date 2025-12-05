@@ -1,0 +1,98 @@
+:root{
+  --bg:#0b0b0d;
+  --card:rgba(255,255,255,0.04);
+  --gold:#e8c872;
+  --gold-2:#f6e7b6;
+  --muted:#a8a8a8;
+  --glass:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,0.6);
+  --blur:8px;
+  font-synthesis: none;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(1200px 400px at 10% 10%, rgba(232,200,114,0.06), transparent 10%),
+    radial-gradient(900px 300px at 90% 90%, rgba(246,231,182,0.03), transparent 10%),
+    var(--bg);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:2rem 1.25rem}
+
+/* HERO */
+.hero{padding:2.25rem 0}
+.hero-inner{display:flex;align-items:center;gap:2rem;justify-content:space-between}
+.intro h1{font-size:2.25rem;margin:0 0 .35rem;line-height:1.05}
+.accent{color:var(--gold)}
+.muted{color:var(--muted)}
+.intro p{margin:0 0 1rem}
+.cta{display:flex;gap:.75rem}
+
+/* PROFILE */
+.profile-card{
+  width:260px;background:var(--card);border-radius:var(--radius);
+  padding:1.25rem;text-align:center;box-shadow:var(--shadow);backdrop-filter:blur(var(--blur));
+  border:1px solid rgba(255,255,255,0.03)
+}
+.avatar{width:86px;height:86px;border-radius:50%;margin:0 auto 0.7rem;display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:var(--gold);font-size:1.6rem;border:3px solid var(--gold);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+.name{margin:0;color:var(--gold)}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:999px;font-weight:700;text-decoration:none;border:none;cursor:pointer;
+}
+.btn.primary{
+  background:linear-gradient(90deg,var(--gold),var(--gold-2));color:#0b0b0d;box-shadow:0 8px 30px rgba(232,200,114,0.14)
+}
+.btn.outline{background:transparent;color:var(--gold);border:2px solid rgba(232,200,114,0.15)}
+
+/* SECTIONS */
+.section{padding:1.25rem 0}
+.section-title{font-size:1.5rem;color:var(--gold);margin:0 0 .25rem;text-transform:uppercase;font-weight:800}
+.section-subtitle{margin:0 0 1rem;color:var(--muted)}
+
+/* CARDS & GRID */
+.card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.badges span{display:inline-block;padding:.45rem .8rem;margin:.25rem;background:transparent;border:1px solid rgba(232,200,114,0.12);border-radius:999px;color:var(--gold);font-weight:600}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.contact-info p{margin:.35rem 0}
+.contact-form .field{display:flex;flex-direction:column;margin-bottom:.75rem}
+.contact-form label{font-size:.9rem;color:var(--muted);margin-bottom:.35rem}
+.contact-form input, .contact-form textarea{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;padding:.65rem .8rem;border-radius:10px;font-family:inherit;font-size:.95rem
+}
+.contact-form textarea{min-height:120px;resize:vertical}
+.form-row{display:flex;gap:.75rem;align-items:center}
+.msg{display:flex;flex-direction:column;gap:.35rem;min-width:160px}
+.error{color:#ff6b6b;font-size:.9rem;display:none}
+.success{color:#8ae29a;font-size:.95rem;display:none}
+
+/* SEND BUTTON micro animation */
+.send-btn{position:relative;overflow:hidden;transition:transform .18s ease}
+.send-btn:active{transform:translateY(2px)}
+.send-icon{opacity:.9;transform:translateX(2px);transition:transform .3s ease}
+.send-btn.sending .send-icon{transform:translateX(10px) rotate(8deg)}
+.send-btn.sending .send-label{opacity:.6}
+
+/* FOOTER */
+.site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
+
+/* RESPONSIVE */
+@media(max-width:880px){
+  .hero-inner{flex-direction:column;align-items:flex-start}
+  .profile-card{width:100%}
+  .contact-grid{grid-template-columns:1fr}
+  .form-row{flex-direction:column;align-items:stretch}
+}
